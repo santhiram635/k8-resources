@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: configMap
 metadata:
-  name: pod-configmap
+  name: pod-config
 data:
   course: "Devsecops with aws"
   duration: "120hrs"
