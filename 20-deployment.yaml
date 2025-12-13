@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-demo
+  labels:       # these labels are replicaset labels
+    purpose: dp-demo
+    project: roboshop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:   # these labels are to select the pods
+      purpose: dp-demo
+      project: roboshop
+  # this is the pod defination
+  template:
+    metadata:
+      labels:   
+        purpose: dp-demo
+        project: roboshop
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:trixie-perl
